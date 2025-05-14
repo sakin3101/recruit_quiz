@@ -64,9 +64,9 @@ int main()
 
 	for (const auto e : questions) {
 		cout << e.q << "\n";
-		int answer;
+		string answer;
 		cin >> answer;
-		if (to_string(answer) == e.a) {
+		if (answer == e.a) {
 			cout << "³‰ðI\n";
 		}
 		else {
