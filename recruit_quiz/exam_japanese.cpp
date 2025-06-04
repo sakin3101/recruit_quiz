@@ -262,8 +262,9 @@ QuestionList CreateAntonymExam()
 		for (int j = 0; j < 4; j++) {
 			s += "\n  " + to_string(j + 1) + ":" + data[answers[j]].kanji[other];
 		}
-		return questions;
+		questions.push_back({ s, to_string(correctNo) });
 	}
+	return questions;
 }
 
 /*
