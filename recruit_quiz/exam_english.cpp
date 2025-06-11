@@ -1,44 +1,44 @@
-#include "exam_english.h"
+ï»¿#include "exam_english.h"
 #include "utility.h"
 #include <random>
 using namespace std;
 
 /*
-*	‰p’PŒê‚Ì–â‘è‚ğì¬‚·‚é	
+*	è‹±å˜èªã®å•é¡Œã‚’ä½œæˆã™ã‚‹	
 */
 QuestionList CreateEnglishWordExam()
 {
 	const struct {
-		const char* word;	// ‰p’PŒê
-		const char* reading;	// “Ç‚İ
-		const char* meaning;	// ˆÓ–¡
+		const char* word;	// è‹±å˜èª
+		const char* reading;	// èª­ã¿
+		const char* meaning;	// æ„å‘³
 	} data[] = {
-		{"state", "ƒXƒe[ƒg", "ó‘Ô"},
-		{"business", "ƒrƒWƒlƒX", "–‹ÆAd–"},
-		{"abstract", "ƒAƒuƒXƒgƒ‰ƒNƒg", "’ŠÛ“I‚È"},
-		{"concrete", "ƒRƒ“ƒNƒŠ[ƒg", "‹ï‘Ì“I‚È"},
-		{"digital", "ƒfƒWƒ^ƒ‹", "”š‚Åî•ñ‚ğ“`‚¦‚é"},
-		{"analogue", "ƒAƒiƒƒO", "—Ş—‚µ‚Ä‚¢‚éA—Ş—•¨"},
-		{"exchange", "ƒGƒNƒXƒ`ƒFƒ“ƒW", "ŒğŠ·A—¼‘ÖAˆ×‘Ö"},
-		{"infrastructure", "ƒCƒ“ƒtƒ‰ƒXƒgƒ‰ƒNƒ`ƒƒ", "‰º•”\‘¢AŠî‘b‚Æ‚È‚é{İ‚âİ”õ"},
-		{"knowledge", "ƒiƒŒƒbƒW", "’m¯"},
-		{"credit", "ƒNƒŒƒWƒbƒg", "M—p"},
-		{"routine", "ƒ‹[ƒeƒBƒ“", "Œˆ‚Ü‚Á‚½è‡A“ú‰Û"},
-		{"management", "ƒ}ƒlƒWƒƒ“ƒg", "ŠÇ—AŒo‰c"},
-		{"account", "ƒAƒJƒEƒ“ƒg", "‰ïŒvAŒûÀ"},
-		{"unique", "ƒ†ƒj[ƒN", "‘¼‚É—Ş‚ğŒ©‚È‚¢AŒÂ«“I‚È"},
-		{"variety", "ƒoƒ‰ƒGƒeƒB", "•Ï‰»‚É•x‚ŞA‘½—l‚È"},
-		{"schedule", "ƒXƒPƒWƒ…[ƒ‹", "—\’èAŒv‰æ"},
-		{"agenda", "ƒAƒWƒFƒ“ƒ_", "‰Û‘èA‹c‘è"},
-		{"technology", "ƒeƒNƒmƒƒW[", "‰ÈŠw‹Zp"},
-		{"collaboration", "ƒRƒ‰ƒ{ƒŒ[ƒVƒ‡ƒ“", "‹¦—ÍA‹¤“¯–‹ÆA‹¤“¯ì‹Æ"},
-		{"tax", "ƒ^ƒbƒNƒX", "Å‹à"},
-		{"stock", "ƒXƒgƒbƒN", "İŒÉAŠ”Œ”"},
-		{"product", "ƒvƒƒ_ƒNƒg", "»‘¢"},
-		{"booking", "ƒuƒbƒLƒ“ƒO", "—\–ñA’ •ë‚Ö‚Ì‹L“ü"},
-		{"weight", "ƒEƒFƒCƒg", "d‚³"},
-		{"compliance", "ƒRƒ“ƒvƒ‰ƒCƒAƒ“ƒX", "–@—ßEĞ‰ï“I‹K”Í‚ğç‚é"},
-		{"receipt", "ƒŒƒV[ƒg", "—Ìû‘"},
+		{"state", "ã‚¹ãƒ†ãƒ¼ãƒˆ", "çŠ¶æ…‹"},
+		{"business", "ãƒ“ã‚¸ãƒã‚¹", "äº‹æ¥­ã€ä»•äº‹"},
+		{"abstract", "ã‚¢ãƒ–ã‚¹ãƒˆãƒ©ã‚¯ãƒˆ", "æŠ½è±¡çš„ãª"},
+		{"concrete", "ã‚³ãƒ³ã‚¯ãƒªãƒ¼ãƒˆ", "å…·ä½“çš„ãª"},
+		{"digital", "ãƒ‡ã‚¸ã‚¿ãƒ«", "æ•°å­—ã§æƒ…å ±ã‚’ä¼ãˆã‚‹"},
+		{"analogue", "ã‚¢ãƒŠãƒ­ã‚°", "é¡ä¼¼ã—ã¦ã„ã‚‹ã€é¡ä¼¼ç‰©"},
+		{"exchange", "ã‚¨ã‚¯ã‚¹ãƒã‚§ãƒ³ã‚¸", "äº¤æ›ã€ä¸¡æ›¿ã€ç‚ºæ›¿"},
+		{"infrastructure", "ã‚¤ãƒ³ãƒ•ãƒ©ã‚¹ãƒˆãƒ©ã‚¯ãƒãƒ£", "ä¸‹éƒ¨æ§‹é€ ã€åŸºç¤ã¨ãªã‚‹æ–½è¨­ã‚„è¨­å‚™"},
+		{"knowledge", "ãƒŠãƒ¬ãƒƒã‚¸", "çŸ¥è­˜"},
+		{"credit", "ã‚¯ãƒ¬ã‚¸ãƒƒãƒˆ", "ä¿¡ç”¨"},
+		{"routine", "ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³", "æ±ºã¾ã£ãŸæ‰‹é †ã€æ—¥èª²"},
+		{"management", "ãƒãƒã‚¸ãƒ¡ãƒ³ãƒˆ", "ç®¡ç†ã€çµŒå–¶"},
+		{"account", "ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ", "ä¼šè¨ˆã€å£åº§"},
+		{"unique", "ãƒ¦ãƒ‹ãƒ¼ã‚¯", "ä»–ã«é¡ã‚’è¦‹ãªã„ã€å€‹æ€§çš„ãª"},
+		{"variety", "ãƒãƒ©ã‚¨ãƒ†ã‚£", "å¤‰åŒ–ã«å¯Œã‚€ã€å¤šæ§˜ãª"},
+		{"schedule", "ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ«", "äºˆå®šã€è¨ˆç”»"},
+		{"agenda", "ã‚¢ã‚¸ã‚§ãƒ³ãƒ€", "èª²é¡Œã€è­°é¡Œ"},
+		{"technology", "ãƒ†ã‚¯ãƒãƒ­ã‚¸ãƒ¼", "ç§‘å­¦æŠ€è¡“"},
+		{"collaboration", "ã‚³ãƒ©ãƒœãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³", "å”åŠ›ã€å…±åŒäº‹æ¥­ã€å…±åŒä½œæ¥­"},
+		{"tax", "ã‚¿ãƒƒã‚¯ã‚¹", "ç¨é‡‘"},
+		{"stock", "ã‚¹ãƒˆãƒƒã‚¯", "åœ¨åº«ã€æ ªåˆ¸"},
+		{"product", "ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆ", "è£½é€ "},
+		{"booking", "ãƒ–ãƒƒã‚­ãƒ³ã‚°", "äºˆç´„ã€å¸³ç°¿ã¸ã®è¨˜å…¥"},
+		{"weight", "ã‚¦ã‚§ã‚¤ãƒˆ", "é‡ã•"},
+		{"compliance", "ã‚³ãƒ³ãƒ—ãƒ©ã‚¤ã‚¢ãƒ³ã‚¹", "æ³•ä»¤ãƒ»ç¤¾ä¼šçš„è¦ç¯„ã‚’å®ˆã‚‹"},
+		{"receipt", "ãƒ¬ã‚·ãƒ¼ãƒˆ", "é ˜åæ›¸"},
 	};
 
 	constexpr int quizCount = 5;
@@ -47,14 +47,14 @@ QuestionList CreateEnglishWordExam()
 	const vector<int>indices = CreateRandomIndices(size(data));
 	random_device rd;
 
-	// –â‘è‚Ìí—Ş‚ğƒ‰ƒ“ƒ_ƒ€‚É‘I‚Ô
+	// å•é¡Œã®ç¨®é¡ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é¸ã¶
 	const int type = uniform_int_distribution<>(0, 3)(rd);
 	switch (type) {
 	case 0:
 		for (int i = 0; i < quizCount; i++) {
 			const auto& e = data[indices[i]];
 			questions.push_back({
-				"u" + string(e.meaning) + "v‚ğˆÓ–¡‚·‚é‰p’PŒê‚ğ“š‚¦‚æ",
+				"ã€Œ" + string(e.meaning) + "ã€ã‚’æ„å‘³ã™ã‚‹è‹±å˜èªã‚’ç­”ãˆã‚ˆ",
 				e.word });
 		}
 		break;
@@ -63,30 +63,153 @@ QuestionList CreateEnglishWordExam()
 		for (int i = 0; i < quizCount; i++) {
 			const auto& e = data[indices[i]];
 			questions.push_back({
-				string(e.word) + "‚Ì“Ç‚İ‚ğƒJƒ^ƒJƒi‚Å“š‚¦‚æ",
+				string(e.word) + "ã®èª­ã¿ã‚’ã‚«ã‚¿ã‚«ãƒŠã§ç­”ãˆã‚ˆ",
 				e.reading });
 		}
 		break;
 
 	case 2:
 		for (int i = 0; i < quizCount; i++) {
-				// ŠÔˆá‚Á‚½”Ô†‚ğƒ‰ƒ“ƒ_ƒ€‚É‘I‚Ô
+				// é–“é•ã£ãŸç•ªå·ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é¸ã¶
 				const int correctIndex = indices[i];
 				vector<int> answers = CreateWrongIndices(size(data), correctIndex);
 
-				// ƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚ğ³‚µ‚¢”Ô†‚Åã‘‚«
+				// ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã‚’æ­£ã—ã„ç•ªå·ã§ä¸Šæ›¸ã
 				const int correctNo = std::uniform_int_distribution<>(1, 3)(rd);
 				answers[correctNo - 1] = correctIndex;
 
-				// –â‘è•¶‚ğì¬
-				string s = "u" + string(data[correctIndex].word) +
-					"v‚ÌˆÓ–¡‚Æ‚µ‚Ä³‚µ‚¢”Ô†‚ğ‘I‚×\n";
+				// å•é¡Œæ–‡ã‚’ä½œæˆ
+				string s = "ã€Œ" + string(data[correctIndex].word) +
+					"ã€ã®æ„å‘³ã¨ã—ã¦æ­£ã—ã„ç•ªå·ã‚’é¸ã¹\n";
 				s += std::string("   1:") + data[answers[0]].meaning + "\n";
 				s += std::string("   2:") + data[answers[1]].meaning + "\n";
 				s += std::string("   3:") + data[answers[2]].meaning;
 
 				questions.push_back({ s, to_string(correctNo) });
 			}
+		break;
+	} // switch(type)
+
+	return questions;
+}
+
+/*
+*	è‹±èªã®å®šå‹æ–‡ã®å•é¡Œã‚’ä½œæˆã™ã‚‹
+*/
+QuestionList CreateEnglishPhraseExam()
+{
+	const struct {
+		const char* phrase;			// å®šå‹æ–‡ã®å½¢
+		const char* meaning;		// å®šå‹æ–‡ã®æ„å‘³
+		const char* example;		// è‹±èªã®ä¾‹æ–‡
+		const char* translation;	// ä¾‹æ–‡ã®æ—¥æœ¬èªè¨³
+		int blankCount;				// ç©´ã®å€™è£œã®æ•°
+		int blankOptions[3];		// ç©´ã®å€™è£œã«ãªã‚‹å˜èªã®ä½ç½®
+	} data[] = {
+		{"too [A] to [B]", "ã¨ã¦ã‚‚[A]ãªã®ã§[B]ã§ããªã„",
+		"The tea was too hot to drink.", "ãŠèŒ¶ãŒç†±ã™ãã¦é£²ã‚ãªã‹ã£ãŸã€‚",
+		2, {3, 5}},
+		{"be looking forward to [A]", "[A]ã‚’æ¥½ã—ã¿ã«ã™ã‚‹",
+		"I'm looking forward to seeing you.", "ã‚ãªãŸã«ä¼šã†ã®ã‚’æ¥½ã—ã¿ã«ã—ã¦ã„ã¾ã™ã€‚",
+		3, {1, 2, 3}},
+		{"according to [A]", "[A]ã«ã‚ˆã‚‹ã¨",
+		"Acoording to the weather forcast, today is rain.", "å¤©æ°—äºˆå ±ã«ã‚ˆã‚‹ã¨ä»Šæ—¥ã¯é›¨ã ã€‚",
+		2, {0, 1}},
+		{"as soon as [A]", "[A]ã™ã‚‹ã¨ã™ãã«",
+		"As soon as arrive, I will call you.", "åˆ°ç€ã—ãŸã‚‰ã™ãã«é›»è©±ã‚’ã‹ã‘ã¾ã™ã€‚",
+		3, {0, 1, 2}},
+		{"be not supposed to [A]", "[A]ã—ã¦ã¯ã„ã‘ãªã„ã“ã¨ã«ãªã£ã¦ã„ã‚‹",
+		"You are not supposed to enter this room.", "ã“ã®éƒ¨å±‹ã«å…¥ã£ã¦ã¯ã„ã‘ã¾ã›ã‚“ã€‚",
+		3, {2, 3, 4}},
+	};
+
+	constexpr int quizCount = 5;
+	QuestionList questions;
+	questions.reserve(quizCount);
+	const vector<int>indices = CreateRandomIndices(size(data));
+	random_device rd;
+
+	// å•é¡Œã®ç¨®é¡ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é¸ã¶
+	const int type = uniform_int_distribution<>(0, 3)(rd);
+	switch (type) {
+	case 0:	// ç©ºæ¬„ã«ã¯ã„ã‚‹å˜èªã‚’ç­”ãˆã‚‹
+		for (int i = 0; i < quizCount; i++) {
+			const auto& e = data[indices[i]];
+
+			// ä¾‹æ–‡ã‚’å˜èªã«åˆ†è§£
+			vector<string> words;
+			const char* start = e.example;
+			for (const char* p = e.example; *p; p++) {
+				if (*p == ' ') {
+					words.push_back({ string(start, p) });
+					start = p + 1;
+				}
+			}
+			words.push_back(string(start));
+
+			// ç©´ã«ã™ã‚‹å˜èªã®ä½ç½®ã‚’é¸ã¶
+			int n = uniform_int_distribution<>(0, e.blankCount - 1)(rd);
+			int blankIndex = e.blankOptions[n];
+
+			// ç©´ã«ã™ã‚‹ä½ç½®ã®å˜èªã‚’ç­”ãˆã¨ã™ã‚‹
+			string a = words[blankIndex];
+
+			// ç©´ã«ã™ã‚‹ä½ç½®ã®å˜èªã‚’ã€Œç©ºæ¬„ã€ã«ç½®ãæ›ãˆã‚‹
+			words[blankIndex] = "[ ? ]";
+
+			// å˜èªã‚’æ–‡ã«å¾©å…ƒ
+			string s = words[0];
+			for (int j = 1; j < words.size(); j++) {
+				s += " " + words[j];
+			}
+
+			// å•é¡Œæ–‡ã¨ç­”ãˆã‚’è¿½åŠ 
+			questions.push_back({
+				"[ ? ]ã«é©åˆ‡ãªèªã‚’å…¥ã‚Œã¦è‹±æ–‡ã‚’å®Œæˆã•ã›ã‚ˆ\n" + string(e.translation) + "\n" + s,
+				a });
+		}
+		break;
+
+	case 1: // å®šå‹æ–‡ã®æ„å‘³ã‚’ç­”ãˆã‚‹
+		for (int i = 0; i < quizCount; i++) {
+			// é–“é•ã£ãŸç•ªå·ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é¸ã¶
+			const int correctIndex = indices[i];
+			vector<int> answers = CreateWrongIndices(size(data), correctIndex);
+
+			// ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã‚’æ­£ã—ã„ç•ªå·ã§ä¸Šæ›¸ã
+			const int correctNo = std::uniform_int_distribution<>(1, 3)(rd);
+			answers[correctNo - 1] = correctIndex;
+
+			// å•é¡Œæ–‡ã‚’ä½œæˆ
+			string s = "ã€Œ" + string(data[correctIndex].phrase) +
+				"ã€ã®æ„å‘³ã¨ã—ã¦æ­£ã—ã„ç•ªå·ã‚’é¸ã¹\n";
+			s += std::string("   1:") + data[answers[0]].meaning + "\n";
+			s += std::string("   2:") + data[answers[1]].meaning + "\n";
+			s += std::string("   3:") + data[answers[2]].meaning;
+
+			questions.push_back({ s, to_string(correctNo) });
+		}
+		break;
+
+	case 2:	// æ„å‘³ã®åˆã†å®šå‹æ–‡ã‚’ç­”ãˆã‚‹
+		for (int i = 0; i < quizCount; i++) {
+			// é–“é•ã£ãŸç•ªå·ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é¸ã¶
+			const int correctIndex = indices[i];
+			vector<int> answers = CreateWrongIndices(size(data), correctIndex);
+
+			// ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã‚’æ­£ã—ã„ç•ªå·ã§ä¸Šæ›¸ã
+			const int correctNo = std::uniform_int_distribution<>(1, 3)(rd);
+			answers[correctNo - 1] = correctIndex;
+
+			// å•é¡Œæ–‡ã‚’ä½œæˆ
+			string s = "ã€Œ" + string(data[correctIndex].meaning) +
+				"ã€ã«å¯¾å¿œã™ã‚‹å®šå‹æ–‡ã‚’é¸ã¹\n";
+			s += std::string("   1:") + data[answers[0]].phrase + "\n";
+			s += std::string("   2:") + data[answers[1]].phrase + "\n";
+			s += std::string("   3:") + data[answers[2]].phrase;
+
+			questions.push_back({ s, to_string(correctNo) });
+		}
 		break;
 	} // switch(type)
 
