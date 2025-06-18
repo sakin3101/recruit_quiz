@@ -19,8 +19,10 @@ QuestionList CreatePhysicsExam()
 		int t = uniform_int_distribution<>(1, 10)(rd) * divisors[i];	// ŠÔ
 		questions.push_back({
 			"‘¬" + to_string(v) + "km‚ÅˆÚ“®‚·‚éÔ‚ª‚ ‚éB\n‚±‚ÌÔ‚ª" + to_string(v * t / 60) +
-			to_string(t) });
+			to_string(t) + "kmˆÚ“®‚·‚é‚Ì‚É‚©‚©‚éŠÔ‚ğ•ª’PˆÊ‚Å‹‚ß‚æ"});
 	}	// “™‘¬’¼ü‰^“®
+
+
 
 	return questions;
 }
