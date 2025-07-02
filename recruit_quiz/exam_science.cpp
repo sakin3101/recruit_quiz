@@ -160,7 +160,7 @@ QuestionList CreatePhysicsExam()
 			answer += '0' + k % 10;
 		}
 		questions.push_back({
-			"重力加速度を10m/s^2とする。\n長さ" + to_string(x) + "cmのばねの先端に" +
+			"重力加速度を10m/s^2とする。\n長さ" + to_string(a) + "cmのばねの先端に" +
 			to_string(m) + "gの重りをつけて、天井から吊り下げた。\nすると、ばねの長さが" +
 			to_string(a + x) + "cmになった。\n"
 			"このばねの「ばね定数」を小数点以下第2位を四捨五入して求めよ。",
