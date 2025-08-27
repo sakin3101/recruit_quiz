@@ -9,19 +9,19 @@ using namespace std;
 /*
 * 経済の問題を作成する
 */
-QuestionList CreateEconmicsExam()
+QuestionList CreateEconomicsExam()
 {
     //経済問題データ
-    struct EconmicsData
+    struct EconomicsData
     {
         string genre;       //ジャンル
         string text;        //問題文
         vector<vector<string>> answers; //答えの配列
     };
-    unordered_map<string, vector<EconmicsData>> data;
+    unordered_map<string, vector<EconomicsData>> data;
 
     {   //経済問題データを読み込む
-        constexpr char filename[] = "japanese_econmics.txt";
+        constexpr char filename[] = "japanese_economics.txt";
         ifstream ifs(filename);
         if (!ifs) {
             cerr << "エラー：" << filename << "を読み込めません\n";

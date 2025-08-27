@@ -133,7 +133,7 @@ int main()
 	}else if (subject == 6) {
 		questions = CreatePoliticsExam();
 	}else if (subject == 7) {
-		questions = CreateEconmicsExam();
+		questions = CreateEconomicsExam();
 	}
 
 	for (const auto e : questions) {
