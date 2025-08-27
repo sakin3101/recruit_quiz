@@ -7,6 +7,7 @@ struct Question
 {
 	std::string q;	//–â‘è•¶
 	std::string a;	//“š‚¦
+	std::vector<std::string> b;	//“š‚¦i•¡”‚ ‚éê‡j
 };
 
 // –â‘è‚Ì”z—ñ‚ğ‚ ‚ç‚í‚·Œ^
